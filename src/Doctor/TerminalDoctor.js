@@ -13,23 +13,33 @@ const HowDoctor = (props) => {
     }
 
         const List = [
+                {
+                id: 0,
+                name: "-- Wybierz Lekarza --", 
+                jaki: "Ogolna", 
+                },
             {
-            id: 0,
+            id: 1,
             name: "Dr Machniak", 
             jaki: "Ogolna", 
             },
             {
-            id: 1,    
+            id: 2,    
             name: "Dr Ladach", 
             jaki: "Ogolna" , 
             },
             {
-            id: 2,
+                id: 4,
+                name: "-- Wybierz Lekarza --", 
+                jaki: "Okulista", 
+                },
+            {
+            id: 4,
             name: "Dr Mikulski", 
             jaki: "Okulista" , 
             },
             {
-            id: 3,
+            id: 5,
             name: "Dr Jerzyński", 
             jaki: "Okulista" , 
             },

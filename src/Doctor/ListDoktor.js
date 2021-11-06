@@ -24,7 +24,7 @@ const ListDoctor = (props) => {
         return ( 
             <>
              <select onChange={handleDoctor} value={firstSelectVal} style={text}>
-                    <option value="none"selected>Wybierz poradnie</option>
+                    <option value="none"selected>-- Wybierz poradnie --</option>
                     <option value="Okulista">Poradnia Okulistyczna</option>
                     <option value="Ogolna">Poradnia Ogolna</option>
              </select>
