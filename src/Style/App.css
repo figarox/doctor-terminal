@@ -1,7 +1,11 @@
+.App{
+  width: 100%;
+}
 
 .Nav{
+  position: sticky;
   padding: 30px;
-  width: 110px;
+  width: 6%;
   height: 100vh;
   background-color: rgb(252, 252, 252);
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -10,12 +14,16 @@
 }
 
 .Menu{
-  width: 100vw;
+  padding: 20px;
+  width: 110.5%;
   height: 150px;
-  background-color: grey;
+  background-color: rgb(247, 247, 247);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 .Page{
+  z-index: -2;
+  position: static;
   width: 85%;
   height: 100vh;
   float: left;
