@@ -1,4 +1,5 @@
 import React, { useState, Component } from "react";
+import PageMain from "../Page/Terminal";
 
 const HowDoctor = (props) => {
     const text = {
@@ -11,50 +12,56 @@ const HowDoctor = (props) => {
         color: "white",
         fontSize: "16px",
     }
-
-        const List = [
-                {
-                id: 0,
-                name: "-- Wybierz Lekarza --", 
-                jaki: "Ogolna", 
-                },
+    const List = [
             {
-            id: 1,
-            name: "Dr Machniak", 
+            id: "0",
+            name: "-- Wybierz Lekarza --", 
             jaki: "Ogolna", 
             },
-            {
-            id: 2,    
-            name: "Dr Ladach", 
-            jaki: "Ogolna" , 
+        {
+        id: "1",
+        name: "Dr Machniak", 
+        jaki: "Ogolna", 
+        },
+        {
+        id: "2",    
+        name: "Dr Ladach", 
+        jaki: "Ogolna" , 
+        },
+        {
+            id: "3",
+            name: "-- Wybierz Lekarza --", 
+            jaki: "Okulista", 
             },
-            {
-                id: 4,
-                name: "-- Wybierz Lekarza --", 
-                jaki: "Okulista", 
-                },
-            {
-            id: 4,
-            name: "Dr Mikulski", 
-            jaki: "Okulista" , 
-            },
-            {
-            id: 5,
-            name: "Dr Jerzyński", 
-            jaki: "Okulista" , 
-            },
-        ]
+        {
+        id: "4",
+        name: "Dr Mikulski", 
+        jaki: "Okulista" , 
+        },
+        {
+        id: "5",
+        name: "Dr Jerzyński", 
+        jaki: "Okulista" , 
+        },
+    ]
 
-        const selectDoctor = props.select
-        
+    const selectDoctor = props.select
+
+    const [doctorname, setDoctorname] = useState(0);
+    const [doctorid, setDoctorid] = useState(0);
+
+
+    const optionDoctor = (props) =>{
+        setDoctorname(props.target.value)
+    }
             if(selectDoctor != "none"){
                 return(
                     <>
                         <div>
-                            <select style={text}>
+                            <select onChange={optionDoctor} style={text}>
                               {List.filter(List => List.jaki === selectDoctor).map(filteredName => (
                                   <option>
-                                      {filteredName.name}
+                                   {filteredName.name}
                                   </option>
                               ))}
                             </select>
@@ -62,15 +69,8 @@ const HowDoctor = (props) => {
                     </>
                 );           
             }else{
-                return(
-                    <>
-                    <div>
-                        
-                    </div>
-                    </> // return null object
-                );   
+                return(<><div></div></>); // return null object   
             }
-
 
 }
  

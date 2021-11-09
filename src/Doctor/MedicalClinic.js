@@ -15,7 +15,6 @@ const ListDoctor = (props) => {
     }
 
     const [firstSelectVal, setFirstselectVal] = useState('none')
-
     
     const handleDoctor = (props) => { 
         setFirstselectVal(props.target.value)
