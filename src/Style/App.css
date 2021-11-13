@@ -4,8 +4,8 @@
 
 .Nav{
   position: sticky;
-  padding: 30px;
-  width: 6%;
+  padding: 20px;
+  width: 6vw;
   height: 100vh;
   background-color: rgb(252, 252, 252);
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -15,7 +15,7 @@
 
 .Menu{
   padding: 20px;
-  width: 110.5%;
+  width: 114.5%;
   height: 150px;
   background-color: rgb(247, 247, 247);
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -24,11 +24,11 @@
 .Page{
   z-index: -2;
   position: static;
-  width: 85%;
+  width: 82%;
   height: 100vh;
   float: left;
 }
 
 .Nav:hover{
-  width: 15%;
+  width: 18%;
 }

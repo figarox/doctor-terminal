@@ -4,38 +4,51 @@ const BoxTable = {
     position: "absolute",
     width: "100%",
     top: "85px"
-  }
+}
 const Table = {
-position: "absolute",
-width: "100%",
+    position: "absolute",
+    width: "100%",
+    marginTop: "25px",
 }
 
-const List = [
-{
-id: "1",
-howTime: "15",
-startTime: "8:00",
-endTime: "15:00",
-},
-]
+class SettingTerminal extends Component{
 
-const SettingTerminal = () => {
- 
-    const [howtime, setHowTime] = useState('15')
-    const [startTime, setStartTime] = useState('8:00')
-    const [endtime, setEndTime] = useState('15:00')
+    state = {
+        doctor: [
+            {
+            id: 1,
+            howTime: "15",
+            startTime: "8:00",
+            endTime: "14:00",
+            rowtime: ["8.00","8.15","8.30"],
+            },
+            {
+            id: 2,
+            howTime: "10",
+            startTime: "9:00",
+            endTime: "14:00",
+            rowtime: ["9.00","9.15","9.30"],
+            },
+         ]
+        }
 
-    const ListTerminal = () => {
-        
+    render(){
+        return (  
+            <div style={BoxTable}>
+                <table style={Table}>
+                    {
+                        this.state.doctor.find(test => test.id === 1).rowtime.map(test2 => 
+                        { 
+                        return <tr> 
+                            <td>
+                                {test2}
+                            </td>
+                        </tr>})                          
+                    }
+                </table>
+            </div>
+        ); 
     }
- 
-    return (  
-        <div style={BoxTable}>
-            <table style={Table}>
-                {ListTerminal}
-            </table>
-        </div>
-    );
+
 }
- 
 export default SettingTerminal;

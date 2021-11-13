@@ -1,5 +1,4 @@
 import React, { Component, useState} from 'react';
-import { Route } from 'react-router';
 import Menu from '../Layouts/Menu';
 import SettingTerminal from '../Doctor/settingTerminal';
 
