@@ -1,5 +1,6 @@
 import React, { useState, Component } from "react";
 import PageMain from "../Page/Terminal";
+import SettingTerminal from '../Doctor/settingTerminal';
 
 const HowDoctor = (props) => {
     const text = {
@@ -12,65 +13,80 @@ const HowDoctor = (props) => {
         color: "white",
         fontSize: "16px",
     }
+    const button = {
+        width: "150px",
+        height: "50px",
+        position: "relative"
+    }
     const List = [
             {
-            id: "0",
+            id: 0,
             name: "-- Wybierz Lekarza --", 
             jaki: "Ogolna", 
             },
         {
-        id: "1",
+        id: 1,
         name: "Dr Machniak", 
         jaki: "Ogolna", 
         },
         {
-        id: "2",    
+        id: 2,    
         name: "Dr Ladach", 
         jaki: "Ogolna" , 
         },
         {
-            id: "3",
+            id: 3,
             name: "-- Wybierz Lekarza --", 
             jaki: "Okulista", 
             },
         {
-        id: "4",
+        id: 4,
         name: "Dr Mikulski", 
         jaki: "Okulista" , 
         },
         {
-        id: "5",
+        id: 5,
         name: "Dr Jerzyński", 
         jaki: "Okulista" , 
         },
     ]
-
     const selectDoctor = props.select
-
-    const [doctorname, setDoctorname] = useState(0);
-    const [doctorid, setDoctorid] = useState(0);
-
+    const [doctorname, setDoctorname] = useState("");
+    const [doctorid, setDoctorid] = useState("");
+    const [isclick, setIsclick] = useState("")
 
     const optionDoctor = (props) =>{
         setDoctorname(props.target.value)
+        setIsclick("false")
     }
-            if(selectDoctor != "none"){
-                return(
-                    <>
-                        <div>
-                            <select onChange={optionDoctor} style={text}>
-                              {List.filter(List => List.jaki === selectDoctor).map(filteredName => (
-                                  <option>
-                                   {filteredName.name}
-                                  </option>
-                              ))}
-                            </select>
-                        </div>
-                    </>
-                );           
-            }else{
-                return(<><div></div></>); // return null object   
-            }
+    
+    const handleIdDoctor = () => {
+        setDoctorid(List.find(List => List.name === doctorname).id);
+        setIsclick("true")
+    }
+    
+    if(selectDoctor != "none"){
+        return(
+            <>
+                <div>
+                    <select onChange={optionDoctor} style={text}>
+                        {List.filter(List => List.jaki === selectDoctor).map(filteredName => (
+                            <option key={filteredName.id}>
+                            {filteredName.name}
+                            </option>
+                        ))}
+                    </select>
+                </div>
+                <button style={button} onClick={handleIdDoctor} active={isclick} >Wyszukaj</button>
+
+                <div>
+                    <SettingTerminal name={doctorname} value={doctorid} active={isclick}/>
+                </div>
+            </>
+        );           
+    }else{
+        return(<><div></div></>); // return null object   
+    }
 
 }
  
