@@ -32,38 +32,23 @@ const SettingTerminal = (props) => {
     const hours = [
         {
             id: 1,
-            howTime: "15",
-            startTime: "8:00",
-            endTime: "14:00",
-            rowtime: [1,2,3],
+            rowtime: [1,1,1],
         },
         {
             id: 2,
-            howTime: "10",
-            startTime: "9:00",
-            endTime: "14:00",
-            rowtime: [321,3213123,4124,412],
+            rowtime: [2,2,2],
         }, 
         {
             id: 3,
-            howTime: "10",
-            startTime: "9:00",
-            endTime: "14:00",
-            rowtime: [],
+            rowtime: [3,3,3],
         },
         {
             id: 4,
-            howTime: "10",
-            startTime: "9:00",
-            endTime: "14:00",
-            rowtime: [],
+            rowtime: [4,4,4],
         }, 
         {
             id: 5,
-            howTime: "10",
-            startTime: "9:00",
-            endTime: "14:00",
-            rowtime: [],
+            rowtime: [5,5,5],
         },
 
     ]

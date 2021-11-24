@@ -6,12 +6,13 @@ const ListDoctor = (props) => {
     const text = {
         backgroundColor: "DodgerBlue",
         top: "100%",
-        width: "auto",
+        width: "200px",
         height: "50px",
         padding: "5px",
         margin: "5px",
         color: "white",
         fontSize: "16px",
+        cursor: "pointer",
     }
 
     const [firstSelectVal, setFirstselectVal] = useState('none')

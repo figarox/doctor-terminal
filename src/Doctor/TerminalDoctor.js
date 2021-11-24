@@ -1,22 +1,20 @@
 import React, { useState, Component } from "react";
 import PageMain from "../Page/Terminal";
 import SettingTerminal from '../Doctor/settingTerminal';
+import '../Style/App.css'
 
 const HowDoctor = (props) => {
     const text = {
         backgroundColor: "DodgerBlue",
         top: "100%",
-        width: "auto",
+        width: "200px",
         height: "50px",
         padding: "5px",
         margin: "5px",
         color: "white",
         fontSize: "16px",
-    }
-    const button = {
-        width: "150px",
-        height: "50px",
-        position: "relative"
+        position: "relative",
+        cursor: "pointer",
     }
     const List = [
             {
@@ -77,10 +75,10 @@ const HowDoctor = (props) => {
                         ))}
                     </select>
                 </div>
-                <button style={button} onClick={handleIdDoctor} active={isclick} >Wyszukaj</button>
+                <button onClick={handleIdDoctor} active={isclick}>Wyszukaj</button>
 
                 <div>
-                    <SettingTerminal name={doctorname} value={doctorid} active={isclick}/>
+                    <SettingTerminal name={doctorname} value={doctorid} active={isclick} />
                 </div>
             </>
         );           
