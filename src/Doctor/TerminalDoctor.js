@@ -4,9 +4,8 @@ import SettingTerminal from '../Doctor/settingTerminal';
 import '../Style/App.css'
 
 const HowDoctor = (props) => {
-    const text = {
+    const text = { 
         backgroundColor: "DodgerBlue",
-        top: "100%",
         width: "200px",
         height: "50px",
         padding: "5px",
@@ -15,6 +14,7 @@ const HowDoctor = (props) => {
         fontSize: "16px",
         position: "relative",
         cursor: "pointer",
+        left: "40px",
     }
     const List = [
             {
@@ -48,10 +48,15 @@ const HowDoctor = (props) => {
         jaki: "Okulista" , 
         },
     ]
+    const errortype = {
+        color: "red",
+    }
+
     const selectDoctor = props.select
-    const [doctorname, setDoctorname] = useState("");
+    const [doctorname, setDoctorname] = useState(null);
     const [doctorid, setDoctorid] = useState("");
-    const [isclick, setIsclick] = useState("")
+    const [isclick, setIsclick] = useState("false")
+    const [error,setError] = useState("false")
 
     const optionDoctor = (props) =>{
         setDoctorname(props.target.value)
@@ -59,14 +64,22 @@ const HowDoctor = (props) => {
     }
     
     const handleIdDoctor = () => {
-        setDoctorid(List.find(List => List.name === doctorname).id);
-        setIsclick("true")
+        if(doctorname != null){
+            setDoctorid(List.find(List => List.name === doctorname).id);
+            setIsclick("true")
+        }else{
+            setError("true");
+            if(error === "true"){
+                <div style={errortype}>
+                     <p>Choose a Doctor</p>
+                </div>
+         }
     }
+}
     
     if(selectDoctor != "none"){
         return(
             <>
-                <div>
                     <select onChange={optionDoctor} style={text}>
                         {List.filter(List => List.jaki === selectDoctor).map(filteredName => (
                             <option key={filteredName.id}>
@@ -74,16 +87,12 @@ const HowDoctor = (props) => {
                             </option>
                         ))}
                     </select>
-                </div>
                 <button onClick={handleIdDoctor} active={isclick}>Wyszukaj</button>
-
-                <div>
-                    <SettingTerminal name={doctorname} value={doctorid} active={isclick} />
-                </div>
+                <SettingTerminal name={doctorname} value={doctorid} active={isclick} />
             </>
         );           
     }else{
-        return(<><div></div></>); // return null object   
+        return(<></>); // return null object   
     }
 
 }

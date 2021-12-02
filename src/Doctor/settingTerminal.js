@@ -5,17 +5,23 @@ const SettingTerminal = (props) => {
     const BoxTable = {
         position: "absolute",
         width: "100%",
-        top: "85px"
+        top: "55px",
+        height: "90%",
+        overflow: "auto",
+        display: "flex",
+
     }
     const Table = {
         position: "absolute",
         width: "100%",
-        marginTop: "25px",
+
     }
     const BoxTerminal = {
+        top: "100px",
+        left: "50px",
         position: "relative",
         width: "40vw",
-        minHeight: "75vh",
+        minHeight: "60vh",
         backgroundColor: "rgb(252, 252, 252)",
         margin: "30px",
         border: "1px solid black",
@@ -25,14 +31,19 @@ const SettingTerminal = (props) => {
       position: "absolute",
       backgroundColor: "rgb(0, 110, 255)",
       width: "100%",
-      height: "15%",
+      height: "10%",
       color: "white",
-      padding: "35px",
+      padding: "17px",
     }
+    const tdstyle = {
+        width: "20%",
+        paddingLeft: "15px"
+    }
+
     const hours = [
         {
             id: 1,
-            rowtime: [1,1,1],
+            rowtime: ["8:00","8:15","8:30","8:45","9:00","9:15","9:30","9:45","10:00","10:15","10:30","10:45","11:00","11:15","11:30","11:45","12:00","12:15","12:30","12:45","13:00","13:15","13:30","13:45"],
         },
         {
             id: 2,
@@ -58,7 +69,7 @@ const SettingTerminal = (props) => {
 
     const [DoctorHours,setDoctorHours] = useState(hours)
 
-    if(isactive === "true"){
+    if(isactive === "true" && IdDoctor != 0){
         return (  
             <div style={BoxTerminal}>
             <div style={BoxName}>
@@ -70,8 +81,11 @@ const SettingTerminal = (props) => {
                         hours.find(how => how.id === IdDoctor).rowtime.map(time => {
                         return (
                             <tr>
+                                <td style={tdstyle}>
+                                    {time} - {time}
+                                </td>
                                 <td>
-                                    {time}
+                                    "fdfsdfsd"
                                 </td>
                             </tr>
                         )

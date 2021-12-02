@@ -5,16 +5,10 @@ import ListDoctor from "../Doctor/MedicalClinic";
 class Menu extends Component {
 
 render(){
-
-    const MenuStyle = {
-        position: "absolute"
-    }    
     
     return ( 
         <>
-            <div style={MenuStyle}>
-                <ListDoctor/>
-            </div>
+            <ListDoctor/>
         </>
      );
 }

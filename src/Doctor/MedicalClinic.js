@@ -5,7 +5,8 @@ const ListDoctor = (props) => {
 
     const text = {
         backgroundColor: "DodgerBlue",
-        top: "100%",
+        position: "relative",
+        left: "40px",
         width: "200px",
         height: "50px",
         padding: "5px",
