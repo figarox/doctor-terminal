@@ -1,0 +1,40 @@
+input {
+    margin: 10px;
+    padding: 5px 10px;
+    font-size: 20px;
+}
+
+.FormTask {
+    font-size: 20px;
+}
+
+.FormTask button {
+    margin: 10px;
+    padding: 5px 10px;
+    font-size: 18px;
+    text-transform: uppercase;
+    background-color: rgba(6, 113, 235, 0.513);
+    border: 2px solid rgba(6, 113, 235, 0.774);
+}
+
+#TaskButton{
+    position: relative;
+    top: -60px;
+    padding: 2px;
+    margin-left: 140px;
+    border-radius: 15px;
+    background-color: rgba(6, 113, 235, 0.287);
+    border: 2px solid rgba(6, 113, 235, 0.774);
+}
+
+#TaskButton:hover{
+    background-color: rgba(5, 120, 250, 0.406);
+    border: none;
+}
+
+div.active p{
+    padding: 2px;
+    margin: 10px;
+}
+
+

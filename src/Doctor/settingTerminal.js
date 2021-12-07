@@ -5,8 +5,8 @@ const SettingTerminal = (props) => {
     const BoxTable = {
         position: "absolute",
         width: "100%",
-        top: "55px",
-        height: "90%",
+        top: "83px",
+        height: "87.5%",
         overflow: "auto",
         display: "flex",
 
@@ -21,7 +21,7 @@ const SettingTerminal = (props) => {
         left: "50px",
         position: "relative",
         width: "40vw",
-        minHeight: "60vh",
+        minHeight: "700px",
         backgroundColor: "rgb(252, 252, 252)",
         margin: "30px",
         border: "1px solid black",
@@ -31,7 +31,7 @@ const SettingTerminal = (props) => {
       position: "absolute",
       backgroundColor: "rgb(0, 110, 255)",
       width: "100%",
-      height: "10%",
+      height: "82px",
       color: "white",
       padding: "17px",
     }

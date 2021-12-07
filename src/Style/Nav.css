@@ -17,13 +17,13 @@ li{
 
 li a{
     margin-top: -50px;
-    margin-left: 70px;
+    margin-left: 80px;
     float: left;
     display: block;
     z-index: -1;
     text-decoration: none;
     color: rgb(85, 85, 85);
-    width: 150px;
+    width: 250px;
 }
 
 a li:hover{
