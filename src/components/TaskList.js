@@ -4,12 +4,11 @@ import Task from './Task';
 const TaskList = (props) => {
 
     const doneTaskStyle = {
-        position: "relative",
-        right: "10vw"
+        position: "absolute",
     }
     const activeStyle = {
         position: "relative",
-        left: "100%"
+        left: "50%",
     }
 
     const active = props.patient.filter(task => task.active);
@@ -32,7 +31,7 @@ const TaskList = (props) => {
          );
 
     }else {
-        const activeTasks = active.filter(patient => patient.ImieNazwisko == props.search || patient.pesel == props.search).map(task => <Task key={task.id} task={task} delete={props.delete} change={props.change}/>);
+        const activeTasks = active.filter(patient => patient.nameAndLastName === props.search || patient.name === props.search || patient.lastname === props.search || patient.pesel === props.search).map(task => <Task key={task.id} task={task} delete={props.delete} change={props.change}/>);
         const doneTasks = done.map(task => <Task key={task.id} task={task} delete={props.delete} change={props.change}/>);
         return ( 
             <>

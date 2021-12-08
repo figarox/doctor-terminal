@@ -28,7 +28,8 @@ const Task = (props) => {
         backgroundColor: "rgb(240, 240, 245)",
         boxShadow: "rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px",
         borderRadius: "25px",
-        marginBottom: "20px",
+        display: "inline-block",
+        margin: "10px",
     }
     const WindowPatient2 = {
         width: "400px",
@@ -74,7 +75,7 @@ const Task = (props) => {
         left: "20px"
     }
 
-    const {ImieNazwisko, date, id, active, pesel, domicile, numberCity, city, doctor} = props.task;
+    const {name, lastname, date, id, active, pesel, domicile, numberCity, city, doctor} = props.task;
 
     if(active){
     return (
@@ -86,7 +87,7 @@ const Task = (props) => {
         </div>
             <div style={NamePatient}>
                 <h4>Imię i Nazwisko</h4>
-                <p>{ImieNazwisko}</p>
+                <p>{name} {lastname}</p>
             </div>
                 <div style={PersnalInformaton}>
                     <h4>Pesel</h4>
@@ -105,7 +106,7 @@ const Task = (props) => {
             </div>
                 <div style={NamePatient}>
                     <h4>Imię i Nazwisko</h4>
-                    <p>{ImieNazwisko}</p>
+                    <p>{name} {lastname}</p>
                 </div>
                     <div style={PersnalInformaton2}>
                         <h4>Data urodzenia</h4>
