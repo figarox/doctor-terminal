@@ -1,39 +1,39 @@
 import React, { useState, Component } from 'react';
-import AddTask from "../components/AddTask";
+import AddPatient from "../components/AddPatient";
 import TaskList from "../components/TaskList";
-import { Route } from 'react-router';
-import Menu from '../Layouts/Menu';
+import AddButton from '../components/AddButton';
+
 
 const BoxPatient = {
-    padding: "55px",
-    paddingLeft: "100px",
-    width: "80vw",
+    positon: "relative",
     height: "90vh",
     display: "flex",
 }
 const WinPatient = {
-    width: "900px",
+    width: "100%",
     height: "100%",
 }
 const PostBox = {
+    positon: "absolute",
     width: "400px",
     height: "100px",
-    backgroundColor: "rgb(240, 240, 245)",
+    backgroundColor: "rgb(238, 238, 245)",
     boxShadow: "rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px",
     borderRadius: "25px",
+    margin: "20px 0px 0px 30px",
     padding: "20px",
-    color: "DodgerBlue"
+    color: "DodgerBlue",
 }
-
 const inputtext = {
     width: "300px",
     height: "30px",
     borderRadius: '5px',
+    padding: "10px",
+    fontSize: "20px"
 }
 
 const PagePatient= () => {
-
-    const counter = 1;
+    let counter = 5;
     const patient = [
         {
         id: 0,
@@ -92,13 +92,8 @@ const PagePatient= () => {
         doctor: "Dr Ladach",
         },
     ]
-    const [statepatient, setStatepatient] = useState(patient);
-    const ifactive = statepatient.filter(patient => patient.active === "false").map(patient => patient.active)
-        console.log(ifactive)
-
-     
-    
-   const changeTaskStatus = (id) => {
+    const changeTaskStatus = (id) => {
+       if(howpatient != 1){
         const patient = Array.from(statepatient)
         patient.forEach(task => {
                 if(task.id === id){
@@ -107,33 +102,12 @@ const PagePatient= () => {
 
         })
         setStatepatient(patient)
+        setHowPatient(1)
+       }
     }
-
-    const addTask = (nameAndLastName, name, lastname, date, important, pesel, domicile, numberCity, city, doctor) => {
-        const patient = {
-            id: counter,
-            nameAndLastName,
-            name,
-            lastname,
-            date,
-            important,
-            active: true,
-            pesel,
-            domicile,
-            numberCity,
-            city,
-            doctor,
-            }
-            counter++;
-            console.log(patient, counter)
-
-            this.setState(prevState => ({
-                patient: [...prevState.patient, patient]
-            }))
-            return true;
-        
+    const addPatient = () => {
+        setBoxadd(true)
     }
-
     const deleteTask = (id) => {
         const patient = Array.from(statepatient)
         patient.forEach(task => {
@@ -142,25 +116,59 @@ const PagePatient= () => {
              }
         })
         setStatepatient(patient)
+        setHowPatient(0)
     }
-
-    const [spatientname, setSpatientname] = useState(null)
-
     const searchPatient = (e) => {
         const cos = e.target.value;
         setSpatientname(cos)
+        setBoxadd(false)
+    }
+    const addtrue = () => {
+        setIfaddbutton(true)
+    }
+    const addfalse = () => {
+        setIfaddbutton(false)
     }
 
+    const addPatientBox = (name,lastname,date,pesel,domicile,numberCity,city,doctor) => {
+        const PatientAdd = {
+            id: counter,
+            nameAndLastName: (name,lastname),
+            name: name,
+            lastname: lastname,
+            date: date,
+            important: false,
+            active: true,
+            pesel: pesel,
+            domicile: domicile,
+            numberCity: numberCity,
+            city: city,
+            doctor: doctor,
+        }
+        counter++;
+        setStatepatient(prevPatient => [...prevPatient, PatientAdd])
+    }
+    const [patientHook, setPatientHook] = useState(patient)
+    const [statepatient, setStatepatient] = useState(patient);
+    const [boxadd, setBoxadd] = useState(false)
+    const [ifaddbutton, setIfaddbutton] = useState(false)
+    const [spatientname, setSpatientname] = useState(null)
+    const [howpatient, setHowPatient] = useState(0)
+
     return ( 
-        <> 
+        <>         
+          <div className="Menu">
             <div style={BoxPatient}>
-            <div style={PostBox}>
-            <p>Wpisz imie nazwisko lub pesel</p>
-            <input type="text" style={inputtext} onChange={searchPatient} value={spatientname} placeholder="Wpisz dane"></input>
-            </div>
                 <div style={WinPatient}>
-                    <TaskList patient={statepatient} delete={deleteTask} change={changeTaskStatus} search={spatientname}/>
+                    <div style={PostBox}>
+                    <p>Wpisz imie, nazwisko lub pesel</p>
+                    <input type="text" style={inputtext} onChange={searchPatient} value={spatientname} placeholder="Wpisz dane"></input>
+                    <AddButton add={addPatient} number={ifaddbutton}/>
+                    </div>
+                    <AddPatient box={boxadd} addF={addPatientBox}/>
+                    <TaskList addtrue={addtrue} addfalse={addfalse} number={ifaddbutton} patient={statepatient} add={addPatient} delete={deleteTask} change={changeTaskStatus} search={spatientname}/>
                 </div>
+            </div>
             </div>
         </>
      );
