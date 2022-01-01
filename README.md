@@ -9,7 +9,7 @@ A brief description of what this project does and who it's for
 fdsfds
 ## Screenshots
 
-![App Screenshot](src/sc/Zrzut ekranu 2022-01-1 o 16.53.02.png)
+![alt text](https://github.com/figarox/doctor-terminal/blob/main/picture1.png?raw=true)
 
 
 ## Demo
