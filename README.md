@@ -4,14 +4,13 @@
 
 # Project Title
 
-A brief description of what this project does and who it's for
+I created terminal simulations for patient registration
 
-fdsfds
 ## Screenshots
 
-![alt text](https://github.com/figarox/doctor-terminal/blob/main/picture1.png?raw=true)
 
 
-## Demo
+
+## Live
 
 https://figarox.github.io/doctor-terminal/
