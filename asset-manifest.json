@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/doctor-terminal/static/css/main.ed1b69f0.chunk.css",
-    "main.js": "/doctor-terminal/static/js/main.be468645.chunk.js",
-    "main.js.map": "/doctor-terminal/static/js/main.be468645.chunk.js.map",
+    "main.js": "/doctor-terminal/static/js/main.1380ebb3.chunk.js",
+    "main.js.map": "/doctor-terminal/static/js/main.1380ebb3.chunk.js.map",
     "runtime-main.js": "/doctor-terminal/static/js/runtime-main.285bba0f.js",
     "runtime-main.js.map": "/doctor-terminal/static/js/runtime-main.285bba0f.js.map",
     "static/js/2.40b5de6d.chunk.js": "/doctor-terminal/static/js/2.40b5de6d.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.285bba0f.js",
     "static/js/2.40b5de6d.chunk.js",
     "static/css/main.ed1b69f0.chunk.css",
-    "static/js/main.be468645.chunk.js"
+    "static/js/main.1380ebb3.chunk.js"
   ]
 }
